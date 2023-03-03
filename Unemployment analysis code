@@ -1,0 +1,174 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+
+data = pd.read_csv('F:\Datasets\data.csv')
+print(data.head())  
+         Region         Date  Frequency   Estimated Unemployment Rate (%)  \
+0  Andhra Pradesh   31-05-2019    Monthly                              3.65   
+1  Andhra Pradesh   30-06-2019    Monthly                              3.05   
+2  Andhra Pradesh   31-07-2019    Monthly                              3.75   
+3  Andhra Pradesh   31-08-2019    Monthly                              3.32   
+4  Andhra Pradesh   30-09-2019    Monthly                              5.17   
+
+    Estimated Employed   Estimated Labour Participation Rate (%)   Area  
+0           11999139.0                                     43.24  Rural  
+1           11755881.0                                     42.05  Rural  
+2           12086707.0                                     43.50  Rural  
+3           12285693.0                                     43.97  Rural  
+4           12256762.0                                     44.68  Rural  
+data.info
+
+data.info
+
+Code
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+data = pd.read_csv('F:\Datasets\data.csv')
+print(data.head())  
+​
+data = pd.read_csv('F:\Datasets\data.csv')
+print(data.head())  
+           Region         Date  Frequency   Estimated Unemployment Rate (%)  \
+0  Andhra Pradesh   31-05-2019    Monthly                              3.65   
+1  Andhra Pradesh   30-06-2019    Monthly                              3.05   
+2  Andhra Pradesh   31-07-2019    Monthly                              3.75   
+3  Andhra Pradesh   31-08-2019    Monthly                              3.32   
+4  Andhra Pradesh   30-09-2019    Monthly                              5.17   
+
+    Estimated Employed   Estimated Labour Participation Rate (%)   Area  
+0           11999139.0                                     43.24  Rural  
+1           11755881.0                                     42.05  Rural  
+2           12086707.0                                     43.50  Rural  
+3           12285693.0                                     43.97  Rural  
+4           12256762.0                                     44.68  Rural  
+data.info
+data.info
+<bound method DataFrame.info of              Region         Date  Frequency   Estimated Unemployment Rate (%)  \
+0    Andhra Pradesh   31-05-2019    Monthly                              3.65   
+1    Andhra Pradesh   30-06-2019    Monthly                              3.05   
+2    Andhra Pradesh   31-07-2019    Monthly                              3.75   
+3    Andhra Pradesh   31-08-2019    Monthly                              3.32   
+4    Andhra Pradesh   30-09-2019    Monthly                              5.17   
+..              ...          ...        ...                               ...   
+763             NaN          NaN        NaN                               NaN   
+764             NaN          NaN        NaN                               NaN   
+765             NaN          NaN        NaN                               NaN   
+766             NaN          NaN        NaN                               NaN   
+767             NaN          NaN        NaN                               NaN   
+
+      Estimated Employed   Estimated Labour Participation Rate (%)   Area  
+0             11999139.0                                     43.24  Rural  
+1             11755881.0                                     42.05  Rural  
+2             12086707.0                                     43.50  Rural  
+3             12285693.0                                     43.97  Rural  
+4             12256762.0                                     44.68  Rural  
+..                   ...                                       ...    ...  
+763                  NaN                                       NaN    NaN  
+764                  NaN                                       NaN    NaN  
+765                  NaN                                       NaN    NaN  
+766                  NaN                                       NaN    NaN  
+767                  NaN                                       NaN    NaN  
+
+[768 rows x 7 columns]>
+print(data.describe)
+​
+<bound method NDFrame.describe of              Region         Date  Frequency   Estimated Unemployment Rate (%)  \
+0    Andhra Pradesh   31-05-2019    Monthly                              3.65   
+1    Andhra Pradesh   30-06-2019    Monthly                              3.05   
+2    Andhra Pradesh   31-07-2019    Monthly                              3.75   
+3    Andhra Pradesh   31-08-2019    Monthly                              3.32   
+4    Andhra Pradesh   30-09-2019    Monthly                              5.17   
+..              ...          ...        ...                               ...   
+763             NaN          NaN        NaN                               NaN   
+764             NaN          NaN        NaN                               NaN   
+765             NaN          NaN        NaN                               NaN   
+766             NaN          NaN        NaN                               NaN   
+767             NaN          NaN        NaN                               NaN   
+
+      Estimated Employed   Estimated Labour Participation Rate (%)   Area  
+0             11999139.0                                     43.24  Rural  
+1             11755881.0                                     42.05  Rural  
+2             12086707.0                                     43.50  Rural  
+3             12285693.0                                     43.97  Rural  
+4             12256762.0                                     44.68  Rural  
+..                   ...                                       ...    ...  
+763                  NaN                                       NaN    NaN  
+764                  NaN                                       NaN    NaN  
+765                  NaN                                       NaN    NaN  
+766                  NaN                                       NaN    NaN  
+767                  NaN                                       NaN    NaN  
+
+[768 rows x 7 columns]>
+print(data.isnull().sum())
+Region                                      28
+ Date                                       28
+ Frequency                                  28
+ Estimated Unemployment Rate (%)            28
+ Estimated Employed                         28
+ Estimated Labour Participation Rate (%)    28
+Area                                        28
+dtype: int64
+data = data.fillna(0) 
+data.columns = ["State","Date","Frequency","Estimated Unemployment Rate (%)","Estimated Employed","Estimated Labour Participation Rate (%)","Area"]
+print(data)
+              State         Date Frequency  Estimated Unemployment Rate (%)  \
+0    Andhra Pradesh   31-05-2019   Monthly                             3.65   
+1    Andhra Pradesh   30-06-2019   Monthly                             3.05   
+2    Andhra Pradesh   31-07-2019   Monthly                             3.75   
+3    Andhra Pradesh   31-08-2019   Monthly                             3.32   
+4    Andhra Pradesh   30-09-2019   Monthly                             5.17   
+..              ...          ...       ...                              ...   
+763               0            0         0                             0.00   
+764               0            0         0                             0.00   
+765               0            0         0                             0.00   
+766               0            0         0                             0.00   
+767               0            0         0                             0.00   
+
+     Estimated Employed  Estimated Labour Participation Rate (%)   Area  
+0            11999139.0                                    43.24  Rural  
+1            11755881.0                                    42.05  Rural  
+2            12086707.0                                    43.50  Rural  
+3            12285693.0                                    43.97  Rural  
+4            12256762.0                                    44.68  Rural  
+..                  ...                                      ...    ...  
+763                 0.0                                     0.00      0  
+764                 0.0                                     0.00      0  
+765                 0.0                                     0.00      0  
+766                 0.0                                     0.00      0  
+767                 0.0                                     0.00      0  
+
+[768 rows x 7 columns]
+plt.style.use("seaborn-whitegrid")
+plt.figure(figsize=(12,10))
+sns.heatmap( data.corr())
+plt.show()
+
+data.columns = ["State","Date","Frequency","Estimated Unemployment Rate (%)","Estimated Employed","Estimated Labour Participation Rate (%)","Area"]
+plt.title("Unemployment")
+sns.histplot(x="Estimated Employed",hue = "Area",data=data)
+plt.show()
+
+plt.figure(figsize=(11,9))
+plt.title("Unemployment")
+sns.histplot(x="Estimated Unemployment Rate (%)",hue = "Area",data=data)
+plt.show()
+
+unemployment = data[["State","Area","Estimated Unemployment Rate (%)"]]
+plt = px.sunburst(unemployment,path=["Area","State"],
+                    values = "Estimated Unemployment Rate (%)",
+                    width = 800,height = 800,color_continuous_scale="BdY1Rn",
+                    title = "Unemployment Rate")
+plt.show()
+
+THE END
